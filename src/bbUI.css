@@ -2956,6 +2956,7 @@ a.bb5-button-highlight span {
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
 }
+
 .bb-bb10-image-list-item-overlay-hires {
 	position:relative;
 	border-width: 4px;
@@ -2977,6 +2978,7 @@ a.bb5-button-highlight span {
 	z-index: 100;
 	margin-left: -5px;
 }
+
 .bb-bb10-image-list-item-overlay-lowres {
 	position:relative;
 	border-width: 2px;
@@ -2988,6 +2990,7 @@ a.bb5-button-highlight span {
 	margin-left: -5px;
 	height: 53px;	
 }
+
 .bb-bb10-image-list-item-overlay-lowres-expanded {
 	position:relative;
 	border-width: 2px;
@@ -3085,6 +3088,7 @@ a.bb5-button-highlight span {
 	width:64px;
 	top:-8px;
 }
+
 .bb-bb10-image-list-item-hires img
 {
 	position:relative;
@@ -3103,6 +3107,7 @@ a.bb5-button-highlight span {
 	float:left;
 	width:109px;
 }
+
 .bb-bb10-image-list-item-lowres .description
 {
 	color:#606060;
@@ -3121,6 +3126,7 @@ a.bb5-button-highlight span {
 	margin-bottom: 0px;
 	margin-top: 2px;
 }
+
 .bb-bb10-image-list-item-hires .description
 {
 	color:#606060;

@@ -263,8 +263,7 @@ _bb10_imageList = {
 							// Set our class
 							btnInner.setAttribute('class',btnInner.normal);								
 						} 
-						}
-						
+												
 						// Adjust the description description
 						if (description.length == 0) {
 							description = '&nbsp;';
