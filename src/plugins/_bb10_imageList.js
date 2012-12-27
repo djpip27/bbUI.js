@@ -3,7 +3,8 @@ _bb10_imageList = {
 		var res = (bb.device.isPlayBook) ? 'lowres' : 'hires',
 			i,j,
 			outerElement,
-			items;
+			items,
+			expanded;
 	
 		// Apply our transforms to all Image Lists
 		for (i = 0; i < elements.length; i++) {
@@ -18,6 +19,14 @@ _bb10_imageList = {
 			
 			// See what kind of style they want for this list
 			outerElement.listStyle = outerElement.hasAttribute('data-bb-style') ? outerElement.getAttribute('data-bb-style').toLowerCase() : 'default';
+			if (outerElement.listStyle == 'expanded'){
+				expanded = '-expanded'
+				outerElement.listStyle = 'default';
+			}
+			else {
+				expanded = '';
+			}
+			
 			
 			// Get our header style
 			outerElement.solidHeader = outerElement.hasAttribute('data-bb-header-style') ? (outerElement.getAttribute('data-bb-header-style').toLowerCase() == 'solid') : false;
@@ -75,7 +84,7 @@ _bb10_imageList = {
 						innerChildNode.setAttribute('class', normal);
 					}
 					else if (type == 'item') {
-						normal = 'bb-bb10-image-list-item bb-bb10-image-list-item-' + bb.screen.listColor + ' bb-bb10-image-list-item-' + res;
+						normal = 'bb-bb10-image-list-item bb-bb10-image-list-item-' + bb.screen.listColor + ' bb-bb10-image-list-item-' + res + expanded;
 						highlight = normal + ' bb-bb10-image-list-item-hover bb10Highlight';
 						innerChildNode.normal = normal;
 						innerChildNode.highlight = highlight;
@@ -139,9 +148,9 @@ _bb10_imageList = {
 						details.innerChildNode = innerChildNode;
 						innerChildNode.details = details;
 						innerChildNode.appendChild(details);
-						detailsClass = 'bb-bb10-image-list-item-details-'+res;
+						detailsClass = 'bb-bb10-image-list-item-details-'+res + expanded;
 						if (this.hideImages) {
-							detailsClass = detailsClass + ' bb-bb10-image-list-item-noimage-'+res;
+							detailsClass = detailsClass + ' bb-bb10-image-list-item-noimage-'+res + expanded;
 						} 
 						
 						// Create our title
@@ -154,6 +163,14 @@ _bb10_imageList = {
 						}
 						details.appendChild(title);
 						
+						// Create the accent text
+						if (innerChildNode.hasAttribute('data-bb-accent-text')) {
+							accentText = document.createElement('div');
+							accentText.setAttribute('class','accent-text');
+							accentText.innerHTML = innerChildNode.getAttribute('data-bb-accent-text');
+							details.appendChild(accentText);
+							details.accentText = accentText;
+						}
 						// Create our description
 						descriptionDiv = document.createElement('div');
 						descriptionDiv.setAttribute('class','description');
@@ -162,7 +179,7 @@ _bb10_imageList = {
 						
 						// Add our highlight overlay
 						overlay = document.createElement('div');
-						overlay.setAttribute('class','bb-bb10-image-list-item-overlay-'+res);
+						overlay.setAttribute('class','bb-bb10-image-list-item-overlay-'+res + expanded);
 						innerChildNode.appendChild(overlay);
 						
 						// See if we need the button area
@@ -245,15 +262,7 @@ _bb10_imageList = {
 							
 							// Set our class
 							btnInner.setAttribute('class',btnInner.normal);								
-						} else {
-							// Create the accent text
-							if (innerChildNode.hasAttribute('data-bb-accent-text')) {
-								accentText = document.createElement('div');
-								accentText.setAttribute('class','accent-text');
-								accentText.innerHTML = innerChildNode.getAttribute('data-bb-accent-text');
-								details.appendChild(accentText);
-								details.accentText = accentText;
-							}
+						} 
 						}
 						
 						// Adjust the description description
