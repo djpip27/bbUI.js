@@ -85,7 +85,7 @@ bb.screen = {
 					}
 				}
 				// Add them into the scrollable area
-				for (j = 0; j < tempHolder.length -1; j++) {
+				for (j = 0; j < tempHolder.length; j++) {
 					scrollArea.appendChild(tempHolder[j]);
 				}
 				
@@ -124,8 +124,11 @@ bb.screen = {
 					// Add our indicator
 					indicator.setAttribute('data-bb-type', 'activity-indicator');
 					indicator.setAttribute('data-bb-size', 'large');
-					//indicator.style.margin = '0px auto 0px auto';
-					indicator.style.margin = '60% auto 50% auto';
+					if (bb.getOrientation().toLowerCase() == 'landscape') {
+						indicator.style.margin = '20% auto 0px auto';
+					} else {
+						indicator.style.margin = '60% auto 0px auto';
+					}
 					overlay.appendChild(indicator);
 					
 					// Create our event handler for when the dom is ready
@@ -133,6 +136,9 @@ bb.screen = {
 								this.scrollArea.style.display = '';
 								this.removeChild(this.overlay);
 								document.removeEventListener('bbuidomprocessed', this.bbuidomprocessed,false);
+								if (bb.device.isPlayBook && bb.scroller) {
+									bb.scroller.refresh();
+								}
 							};
 					outerScrollArea.bbuidomprocessed = outerScrollArea.bbuidomprocessed.bind(outerScrollArea);
 					
@@ -234,7 +240,7 @@ bb.screen = {
 					}
 				}
 				// Add them into the scrollable area
-				for (j = 0; j < tempHolder.length -1; j++) {
+				for (j = 0; j < tempHolder.length; j++) {
 					scrollArea.appendChild(tempHolder[j]);
 				}
                    
@@ -311,7 +317,7 @@ bb.screen = {
 							offsetTop -= bb.screen.currentScreen.titleBarHeight;
 						}
 						// Adjust for action bar
-						if (bb.screen.currentScreen.titleBar) {
+						if (bb.screen.currentScreen.actionBar) {
 							offsetTop -= bb.screen.currentScreen.actionBarHeight;
 						}
 						this.scrollTo(offsetTop);
