@@ -2965,10 +2965,6 @@ a.bb5-button-highlight span {
 	overflow:hidden;
 }
 
-.bb-bb10-image-list-item-expanded
-{
-	padding-bottom: 0px;
-}
 .bb-bb10-image-list-item-lowres
 {
 	padding-top: 3px;	
@@ -3195,6 +3191,7 @@ a.bb5-button-highlight span {
 	margin-bottom: 0px;
 	margin-top:-1px;
 }
+
 .bb-bb10-image-list-item-hover .description
 {
 	color: White;
@@ -3207,7 +3204,7 @@ a.bb5-button-highlight span {
 	color:#606060;
 	font-size:14pt;
 	margin-right: 5px;
-	margin-top:-50px;
+	margin-top: -35px;
 }
 
 .bb-bb10-image-list-item-lowres-expanded .accent-text
@@ -3217,7 +3214,7 @@ a.bb5-button-highlight span {
 	color:#606060;
 	font-size:14pt;
 	margin-right: 5px;
-	margin-top:-25px;
+	margin-top: -35px;
 }
 
 .bb-bb10-image-list-item-hires .accent-text
@@ -3227,7 +3224,17 @@ a.bb5-button-highlight span {
 	color:#606060;
 	font-size:22pt;
 	margin-right: 10px;
-	margin-top:-79px;
+	margin-top: -40px;
+}
+
+.bb-bb10-image-list-item-hires-expanded .accent-text
+{
+	position:relative;
+	float:right;	
+	color:#606060;
+	font-size:22pt;
+	margin-right: 10px;
+	margin-top: -40px;
 }
 
 .bb-bb10-image-list-item-hover .accent-text

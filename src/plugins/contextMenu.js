@@ -332,7 +332,7 @@ bb.contextMenu = {
 											}
 										}
 									}
-				action.ontouchend = function () {
+				action.ontouchend = function (e) {
 										if (this.menu.peeking) {
 											this.style['border-left-color'] = 'transparent';
 										} else {

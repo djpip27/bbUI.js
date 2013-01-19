@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-/* VERSION: 0.9.6.30*/
+/* VERSION: 0.9.6.37*/
 
 body, html {
 	padding:0;
@@ -2993,11 +2993,29 @@ a.bb5-button-highlight span {
 	border-bottom-style: solid;
 }
 
+.bb-bb10-image-list-item-lowres-expanded
+{
+	padding-top: 3px;	
+	padding-left: 5px;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
 .bb-bb10-image-list-item-hires
 {
 	padding-top: 6px;	
 	padding-left: 5px;
 	height: 103px;
+	border-top-width: 0px;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
+
+.bb-bb10-image-list-item-hires-expanded
+{
+	padding-top: 6px;	
+	padding-left: 5px;
 	border-top-width: 0px;
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
@@ -3015,6 +3033,16 @@ a.bb5-button-highlight span {
 	height: 101px;
 }
 
+.bb-bb10-image-list-item-overlay-hires-expanded {
+	position:relative;
+	border-width: 4px;
+	border-style: solid;
+	border-color: transparent;
+	background-color: transparent;
+	z-index: 100;
+	margin-left: -5px;
+}
+
 .bb-bb10-image-list-item-overlay-lowres {
 	position:relative;
 	border-width: 2px;
@@ -3025,6 +3053,16 @@ a.bb5-button-highlight span {
 	margin-top: -61px;
 	margin-left: -5px;
 	height: 53px;	
+}
+
+.bb-bb10-image-list-item-overlay-lowres-expanded {
+	position:relative;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+	background-color: transparent;
+	z-index: 100;
+	margin-left: -5px;
 }
 
 .bb-bb10-image-list-item-details-lowres 
@@ -3106,6 +3144,15 @@ a.bb5-button-highlight span {
 	top:-8px;
 }
 
+.bb-bb10-image-list-item-lowres-expanded  img
+{
+	position:relative;
+	left: -5px;	
+	float:left;
+	width:64px;
+	top:-8px;
+}
+
 .bb-bb10-image-list-item-hires img
 {
 	position:relative;
@@ -3113,6 +3160,15 @@ a.bb5-button-highlight span {
 	top: -6px;
 	float:left;
 	height:109px;
+	width:109px;
+}
+
+.bb-bb10-image-list-item-hires-expanded img
+{
+	position:relative;
+	left: -5px;	
+	top: -6px;
+	float:left;
 	width:109px;
 }
 
@@ -3127,6 +3183,14 @@ a.bb5-button-highlight span {
 	text-overflow: ellipsis;
 }
 
+.bb-bb10-image-list-item-lowres-expanded .description
+{
+	color:#606060;
+	font-size: 14pt;	
+	margin-bottom: 0px;
+	margin-top: 2px;
+}
+
 .bb-bb10-image-list-item-hires .description
 {
 	color:#606060;
@@ -3136,6 +3200,14 @@ a.bb5-button-highlight span {
 	margin-bottom: 0px;
 	margin-top:-1px;
 	text-overflow: -blackberry-fade;
+}
+
+.bb-bb10-image-list-item-hires-expanded .description
+{
+	color:#606060;
+	font-size: 26pt;	
+	margin-bottom: 0px;
+	margin-top:-1px;
 }
 
 .bb-bb10-image-list-item-hover .description
@@ -3150,7 +3222,17 @@ a.bb5-button-highlight span {
 	color:#606060;
 	font-size:14pt;
 	margin-right: 5px;
-	margin-top:-50px;
+	margin-top: -35px;
+}
+
+.bb-bb10-image-list-item-lowres-expanded .accent-text
+{
+	position:relative;
+	float:right;	
+	color:#606060;
+	font-size:14pt;
+	margin-right: 5px;
+	margin-top: -35px;
 }
 
 .bb-bb10-image-list-item-hires .accent-text
@@ -3160,7 +3242,17 @@ a.bb5-button-highlight span {
 	color:#606060;
 	font-size:22pt;
 	margin-right: 10px;
-	margin-top:-79px;
+	margin-top: -40px;
+}
+
+.bb-bb10-image-list-item-hires-expanded .accent-text
+{
+	position:relative;
+	float:right;	
+	color:#606060;
+	font-size:22pt;
+	margin-right: 10px;
+	margin-top: -40px;
 }
 
 .bb-bb10-image-list-item-hover .accent-text
